@@ -175,7 +175,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile layout */}
-            <div className="flex flex-col md:hidden pt-4 pb-3 px-2">
+            <div className="flex flex-col md:hidden pt-4 pb-3 px-4">
               {[
                 ["Home", "01"],
                 ["About", "02"],
@@ -191,7 +191,7 @@ export default function Navbar() {
             </div>
 
             {/* Bottom row */}
-            <div className="flex justify-between items-center pt-6 md:pt-10 pb-1 px-2">
+            <div className="md:flex justify-between items-center pt-6 md:pt-10 pb-1 px-4">
               <div className="space-y-0.5">
                 <div className="relative overflow-hidden h-6.5 flex items-center group w-fit">
                   <span className="block text-sm md:text-lg font-semibold text-black transition-transform duration-300 group-hover:-translate-y-full">
@@ -211,7 +211,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <div className="flex gap-3 md:gap-4">
+              <div className="flex gap-3 md:gap-4 mt-4 md:mt-0">
                 {["Twitter/X", "Instagram", "LinkedIn"].map((s) => (
                   <div
                     key={s}
