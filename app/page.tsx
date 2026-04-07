@@ -5,6 +5,9 @@ import Marquee from "./_components/Marquee";
 import ParralexImage from "./_components/ParralexImage";
 import About from "./_components/About";
 import AboutMarquee from "./_components/AboutMarquee";
+import ParralexVideo from "./_components/ParralexVideo";
+import Work from "./_components/Work";
+import WhyUs from "./_components/WhyUs";
 
 export default function page() {
   return (
@@ -16,6 +19,9 @@ export default function page() {
         <ParralexImage />
         <About/>
         <AboutMarquee />
+        <ParralexVideo/>
+        <Work/>
+        <WhyUs/>
       </div>
     </div>
   );
