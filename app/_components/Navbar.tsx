@@ -22,14 +22,17 @@ const NavLink = ({
   label,
   num,
   href = "#",
+  onClick,
 }: {
   label: string;
   num: string;
   href?: string;
+  onClick?: () => void;
 }) => {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className="group flex justify-between items-center py-2.5 border-b border-gray-400 hover:border-gray-600 transition-colors duration-300 overflow-hidden"
     >
       <span className="relative overflow-hidden h-9 flex items-center">
@@ -53,6 +56,14 @@ const NavLink = ({
   );
 };
 
+const navPages = [
+  { label: "Home", num: "01", href: "/" },
+  { label: "About", num: "02", href: "/about" },
+  { label: "Projects", num: "03", href: "/projects" },
+  { label: "Blog", num: "04", href: "/blog" },
+  { label: "Contact", num: "05", href: "/contact" },
+];
+
 export default function Navbar() {
   const [time, setTime] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -71,7 +82,13 @@ export default function Navbar() {
     return () => clearInterval(interval);
   }, []);
 
-  const navItems = ["About", "Projects", "Blog"];
+  const closeMenu = () => setMenuOpen(false);
+
+  const navItems = [
+    { label: "About", href: "/about" },
+    { label: "Projects", href: "/projects" },
+    { label: "Blog", href: "/blog" },
+  ];
 
   return (
     <>
@@ -82,23 +99,23 @@ export default function Navbar() {
             ? "backdrop-blur-sm bg-black/40 pointer-events-auto"
             : "backdrop-blur-none bg-black/0 pointer-events-none"
         }`}
-        onClick={() => setMenuOpen(false)}
+        onClick={closeMenu}
       />
 
-      {/* Navbar outer - full width fixed */}
+      {/* Navbar outer */}
       <div className="fixed top-0 left-0 right-0 z-50 flex justify-center">
-
-        {/* Navbar inner - max width + margin */}
         <div className="bg-[#E3E3E3] w-full mx-2 md:mx-10 min-[1920px]:max-w-7xl rounded-b-xl overflow-hidden">
           <nav className="flex items-center justify-between px-3 py-1.5">
             {/* Left */}
             <div className="flex items-center gap-2">
-              <Image
-                src="/kanso logo.svg"
-                alt="Kanso Logo"
-                width={65}
-                height={65}
-              />
+              <Link href="/">
+                <Image
+                  src="/kanso logo.svg"
+                  alt="Kanso Logo"
+                  width={65}
+                  height={65}
+                />
+              </Link>
               <span className="text-gray-600 text-sm">{time}</span>
             </div>
 
@@ -114,16 +131,18 @@ export default function Navbar() {
                   <HoverText>(Optional Dark version)</HoverText>
                 </Link>
                 {navItems.map((item) => (
-                  <Link key={item} href="#">
-                    <HoverText>{item}</HoverText>
+                  <Link key={item.label} href={item.href} onClick={closeMenu}>
+                    <HoverText>{item.label}</HoverText>
                   </Link>
                 ))}
               </div>
 
-              {/* Start a project - desktop only */}
-              <button className="hidden md:block bg-black text-white text-sm px-4 py-1.25 rounded-full transition whitespace-nowrap">
-                Start a project
-              </button>
+              {/* Start a project */}
+              <Link href="/contact" onClick={closeMenu}>
+                <button className="hidden md:block bg-black text-white text-sm px-4 py-1.25 rounded-full transition whitespace-nowrap">
+                  Start a project
+                </button>
+              </Link>
 
               {/* Plus button */}
               <button
@@ -146,14 +165,14 @@ export default function Navbar() {
             {/* Desktop layout */}
             <div className="hidden md:flex gap-6 pt-16 pb-3 h-90 px-5">
               <div className="flex-1 w-[50%]">
-                {[
-                  ["Home", "01"],
-                  ["About", "02"],
-                  ["Projects", "03"],
-                  ["Blog", "04"],
-                  ["Contact", "05"],
-                ].map(([label, num]) => (
-                  <NavLink key={label} label={label} num={num} />
+                {navPages.map(({ label, num, href }) => (
+                  <NavLink
+                    key={label}
+                    label={label}
+                    num={num}
+                    href={href}
+                    onClick={closeMenu}
+                  />
                 ))}
               </div>
               <div className="w-[50%] rounded-xl overflow-hidden relative shrink-0">
@@ -176,18 +195,20 @@ export default function Navbar() {
 
             {/* Mobile layout */}
             <div className="flex flex-col md:hidden pt-4 pb-3 px-4">
-              {[
-                ["Home", "01"],
-                ["About", "02"],
-                ["Projects", "03"],
-                ["Blog", "04"],
-                ["Contact", "05"],
-              ].map(([label, num]) => (
-                <NavLink key={label} label={label} num={num} />
+              {navPages.map(({ label, num, href }) => (
+                <NavLink
+                  key={label}
+                  label={label}
+                  num={num}
+                  href={href}
+                  onClick={closeMenu}
+                />
               ))}
-              <button className="mt-6 w-full bg-black text-white text-sm py-3 rounded-full transition whitespace-nowrap">
-                Start a project
-              </button>
+              <Link href="/contact" onClick={closeMenu}>
+                <button className="mt-6 w-full bg-black text-white text-sm py-3 rounded-full transition whitespace-nowrap">
+                  Start a project
+                </button>
+              </Link>
             </div>
 
             {/* Bottom row */}
@@ -212,18 +233,25 @@ export default function Navbar() {
               </div>
 
               <div className="flex gap-3 md:gap-4 mt-4 md:mt-0">
-                {["Twitter/X", "Instagram", "LinkedIn"].map((s) => (
-                  <div
-                    key={s}
+                {[
+                  { label: "Twitter/X", href: "https://twitter.com" },
+                  { label: "Instagram", href: "https://instagram.com" },
+                  { label: "LinkedIn", href: "https://linkedin.com" },
+                ].map((s) => (
+                  <Link
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="relative overflow-hidden h-5 flex items-center group w-fit cursor-pointer"
                   >
                     <span className="block text-xs md:text-sm font-medium text-black transition-transform duration-300 group-hover:-translate-y-full">
-                      {s}
+                      {s.label}
                     </span>
                     <span className="absolute top-full block text-xs md:text-sm font-medium text-black transition-transform duration-300 group-hover:-translate-y-full">
-                      {s}
+                      {s.label}
                     </span>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

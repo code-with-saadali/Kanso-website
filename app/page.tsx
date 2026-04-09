@@ -1,5 +1,3 @@
-import React from "react";
-import Navbar from "./_components/Navbar";
 import Hero from "./_components/Hero";
 import Marquee from "./_components/Marquee";
 import ParralexImage from "./_components/ParralexImage";
@@ -14,12 +12,10 @@ import Pricing from "./_components/Pricing";
 import Testimonials from "./_components/Testimonials";
 import Faq from "./_components/Faq";
 import Blog from "./_components/Blog";
-import Footer from "./_components/Footer";
 
 export default function page() {
   return (
     <div>
-      <Navbar />
       <div className="px-3 md:px-10 min-[1920px]:max-w-7xl mx-auto">
         <Hero />
         <Marquee />
@@ -36,7 +32,6 @@ export default function page() {
         <Faq />
         <Blog />
       </div>
-      <Footer />
     </div>
   );
 }

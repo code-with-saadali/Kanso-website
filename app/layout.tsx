@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "./_components/LenisProvider";
+import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,7 +31,11 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <LenisProvider>{children}</LenisProvider>
+        <LenisProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );
