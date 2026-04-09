@@ -14,6 +14,7 @@ import Pricing from "./_components/Pricing";
 import Testimonials from "./_components/Testimonials";
 import Faq from "./_components/Faq";
 import Blog from "./_components/Blog";
+import Footer from "./_components/Footer";
 
 
 
@@ -36,7 +37,10 @@ export default function page() {
         <Testimonials/>
         <Faq />
         <Blog/>
+  
+      
       </div>
+      <Footer />
     </div>
   );
 }
