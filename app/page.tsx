@@ -16,8 +16,6 @@ import Faq from "./_components/Faq";
 import Blog from "./_components/Blog";
 import Footer from "./_components/Footer";
 
-
-
 export default function page() {
   return (
     <div>
@@ -26,19 +24,17 @@ export default function page() {
         <Hero />
         <Marquee />
         <ParralexImage />
-        <About/>
+        <About />
         <AboutMarquee />
-        <ParralexVideo/>
-        <Work/>
-        <WhyUs/>
-        <Services/>
-        <Process/>
-        <Pricing/>
-        <Testimonials/>
+        <ParralexVideo />
+        <Work />
+        <WhyUs />
+        <Services />
+        <Process />
+        <Pricing />
+        <Testimonials />
         <Faq />
-        <Blog/>
-  
-      
+        <Blog />
       </div>
       <Footer />
     </div>

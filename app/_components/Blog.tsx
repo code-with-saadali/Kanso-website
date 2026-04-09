@@ -42,7 +42,7 @@ export default function Blog() {
         <span className="text-sm text-gray-400">(09)</span>
       </div>
 
-      <h1 className="text-[32px] sm:text-[40px] lg:text-[55px] font-medium leading-tight tracking-tighter text-black">
+      <h1 className="text-[32px] sm:text-[40px] lg:text-[55px] font-medium leading-tighter tracking-tighter text-black">
         Latest insights from our blog.
       </h1>
 
@@ -78,18 +78,18 @@ export default function Blog() {
                   <div className="absolute inset-0 bg-linear-to-t from-black/30 via-black/15 to-transparent" />
 
                   <div className="absolute bottom-5 left-4 right-4 text-white">
-                    <p className="text-xs text-white/60 mb-2">
+                    <p className="text-sm tracking-tighter font-medium text-white/60 mb-2">
                       {item.date}
                     </p>
-                    <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold leading-snug">
+                    <h2 className="text-lg tracking-tighter font-semibold">
                       {item.title}
                     </h2>
-                    <p className="text-sm text-white/70 mt-2 leading-relaxed">
+                    <p className="text-sm text-white/90 mt-2 max-w-sm">
                       {item.desc}
                     </p>
                   </div>
 
-                  <span className="absolute top-4 right-4 text-xs bg-white text-black px-4 py-1.5 rounded-full">
+                  <span className="absolute top-4 right-4 text-sm bg-[#EBEBEB] text-black px-4 py-1.5 tracking-tight rounded-full">
                     {item.category}
                   </span>
                 </div>
@@ -111,20 +111,20 @@ export default function Blog() {
                       fill
                       className="object-cover transition-transform duration-600 group-hover:scale-105"
                     />
-                    <span className="absolute top-3 right-3 text-[11px] bg-white text-black px-3 py-1 rounded-full">
-                      {item.category}
-                    </span>
+                     <span className="absolute top-4 right-4 text-sm bg-[#EBEBEB] text-black px-4 py-1.5 tracking-tight rounded-full">
+                    {item.category}
+                  </span>
                   </div>
                 </div>
 
                 <div className="pl-1 pt-4">
-                  <p className="text-[11px] text-gray-400 mb-2">
-                    {item.date}
-                  </p>
-                  <h3 className="text-[15px] font-semibold text-black leading-snug">
+                  <p className="text-sm tracking-tighter font-medium text-gray-500 mb-2">
+                      {item.date}
+                    </p>
+                  <h3 className="text-lg tracking-tighter font-semibold text-black">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mt-2 leading-relaxed">
+                  <p className="text-sm text-gray-600 mt-2 tracking-tighter">
                     {item.desc}
                   </p>
                 </div>
