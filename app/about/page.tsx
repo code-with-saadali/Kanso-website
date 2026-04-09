@@ -8,9 +8,9 @@ import OurTeam from "./_components/OurTeam";
 import OurStory from "./_components/OurStory";
 
 export default function page() {
-  return (<div className="px-3 md:px-10 min-[1920px]:max-w-7xl mx-auto">
+  return (
     <div>
-      
+      <div className="px-3 md:px-10 min-[1920px]:max-w-7xl mx-auto">
         <About />
         <ParralexImage />
         <Approach />
