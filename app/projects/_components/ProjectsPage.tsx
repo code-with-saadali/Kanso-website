@@ -68,7 +68,7 @@ export default function ProjectsPage() {
                 alt={item.title}
                 width={600}
                 height={600}
-                className="w-full h-80 sm:h-95 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="w-full h-80 sm:h-130 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
             </div>
 
