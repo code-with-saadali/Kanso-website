@@ -1,4 +1,4 @@
-// data.ts
+// Work.ts
 
 export const works = [
   {

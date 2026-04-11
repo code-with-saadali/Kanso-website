@@ -4,14 +4,16 @@ import ParralexImage from "./_components/ParralexImage";
 import About from "./_components/About";
 import AboutMarquee from "./_components/AboutMarquee";
 import ParralexVideo from "./_components/ParralexVideo";
-import Work from "./_components/Work";
+
 import WhyUs from "./_components/WhyUs";
 import Services from "./_components/Services";
 import Process from "./_components/Process";
 import Pricing from "./_components/Pricing";
 import Testimonials from "./_components/Testimonials";
 import Faq from "./_components/Faq";
-import Blog from "./_components/Blog";
+import Blog from "./blog/_components/Blog";
+import ProjectsPage from "./projects/_components/ProjectsPage";
+
 
 export default function page() {
   return (
@@ -23,14 +25,14 @@ export default function page() {
         <About />
         <AboutMarquee />
         <ParralexVideo />
-        <Work />
+        <ProjectsPage/>
         <WhyUs />
         <Services />
         <Process />
         <Pricing />
         <Testimonials />
         <Faq />
-        <Blog />
+       <Blog/>
       </div>
     </div>
   );

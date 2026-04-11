@@ -1,6 +1,6 @@
 import Image from "next/image";
-import React from "react";
-import { works } from "./data";
+import { works } from "./workdata";
+
 
 export default function Work() {
   return (

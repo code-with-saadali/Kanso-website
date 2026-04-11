@@ -1,64 +1,10 @@
 "use client";
 
+import { projects } from "@/app/_components/Projectsdata";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
-const projects = [
-  {
-    id: 1,
-    title: "Lune",
-    category: "App Visual Direction",
-    year: "2025",
-    tag: "Art Direction",
-    image:
-      "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=80",
-  },
-  {
-    id: 2,
-    title: "Aren",
-    category: "Fashion Brand Launch",
-    year: "2025",
-    tag: "Brand Identity",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-  },
-  {
-    id: 3,
-    title: "Forma",
-    category: "Brand Identity Design",
-    year: "2024",
-    tag: "Digital Design",
-    image:
-      "https://ik.imagekit.io/msmrd69gi/knos%20website/pPk4LzlQQcnV8kGuwN1eECaNjU.avif?updatedAt=1775552518098",
-  },
-  {
-    id: 4,
-    title: "Nørda",
-    category: "Product Campaign",
-    year: "2024",
-    tag: "Strategy",
-    image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80",
-  },
-  {
-    id: 5,
-    title: "Velin",
-    category: "Web Experience",
-    year: "2023",
-    tag: "Web design",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-  },
-  {
-    id: 6,
-    title: "Studio Oko",
-    category: "Visual Strategy",
-    year: "2023",
-    tag: "Strategy",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
-  },
-];
 
 const filters = [
   "All projects",
@@ -110,9 +56,10 @@ export default function ProjectsPage() {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {filtered.map((item) => (
-          <div
+          <Link
             key={item.id}
-            className="bg-[#EBEBEB] rounded-2xl p-2 cursor-pointer group transition-all duration-600 hover:bg-black will-change-transform"
+            href={`/projects/${item.slug}`}
+            className="bg-[#EBEBEB] rounded-2xl p-2 cursor-pointer group transition-all duration-600 hover:bg-black will-change-transform block"
           >
             {/* Image */}
             <div className="overflow-hidden rounded-xl">
@@ -159,7 +106,7 @@ export default function ProjectsPage() {
                 </span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

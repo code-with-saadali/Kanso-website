@@ -85,6 +85,7 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   const navItems = [
+    { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
     { label: "Blog", href: "/blog" },
@@ -127,9 +128,6 @@ export default function Navbar() {
                   menuOpen ? "max-w-0 opacity-0" : "max-w-xs opacity-100"
                 }`}
               >
-                <Link href="#">
-                  <HoverText>(Optional Dark version)</HoverText>
-                </Link>
                 {navItems.map((item) => (
                   <Link key={item.label} href={item.href} onClick={closeMenu}>
                     <HoverText>{item.label}</HoverText>
@@ -139,7 +137,7 @@ export default function Navbar() {
 
               {/* Start a project */}
               <Link href="/contact" onClick={closeMenu}>
-                <button className="hidden md:block bg-black text-white text-sm px-4 py-1.25 rounded-full transition whitespace-nowrap">
+                <button className="hidden md:block bg-black cursor-pointer text-white text-sm px-4 py-1.25 rounded-full transition whitespace-nowrap">
                   Start a project
                 </button>
               </Link>
@@ -205,7 +203,7 @@ export default function Navbar() {
                 />
               ))}
               <Link href="/contact" onClick={closeMenu}>
-                <button className="mt-6 w-full bg-black text-white text-sm py-3 rounded-full transition whitespace-nowrap">
+                <button className="mt-6 w-full bg-black cursor-pointer text-white text-sm py-3 rounded-full transition whitespace-nowrap">
                   Start a project
                 </button>
               </Link>
