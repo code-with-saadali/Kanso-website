@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FiPlus, FiX } from "react-icons/fi";
+import Link from "next/link";
 
 const services = [
   {
@@ -181,9 +182,11 @@ export default function Services() {
         })}
 
         <div className="mt-8 md:mt-12">
-          <button className="bg-white text-black px-6 py-3 rounded-full text-sm md:text-base hover:bg-gray-200 transition">
-            See pricing +
+         <Link href="/contact">
+           <button className="bg-white cursor-pointer text-black px-6 py-3 rounded-full text-sm md:text-base hover:bg-gray-200 transition">
+            Contact us +
           </button>
+         </Link>
         </div>
       </div>
     </section>

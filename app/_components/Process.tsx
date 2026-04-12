@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FiPlus } from "react-icons/fi";
 
@@ -45,9 +46,11 @@ export default function Process() {
             We believe great design is a result of clarity, collaboration, and craft.
           </p>
 
-          <button className="px-6 py-2 rounded-full bg-[#EBEBEB] hover:bg-gray-200 cursor-pointer transition font-medium tracking-tighter flex items-center gap-1 text-sm">
+          <Link href="/contact">
+            <button className="px-6 py-2 rounded-full bg-[#EBEBEB] hover:bg-gray-200 cursor-pointer transition font-medium tracking-tighter flex items-center gap-1 text-sm">
             Let’s talk <FiPlus/>
           </button>
+          </Link>
         </div>
 
         {/* RIGHT SIDE */}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FiPlus } from "react-icons/fi";
 
@@ -30,7 +31,8 @@ export default function Approach() {
         </p>
 
         {/* BUTTON */}
-        <button className="group w-fit px-5 py-2.5 rounded-full bg-[#EBEBEB] hover:bg-gray-200 transition font-medium tracking-tighter flex items-center gap-2 text-sm cursor-pointer">
+        <Link href="/projects">
+          <button className="group w-fit px-5 py-2.5 rounded-full bg-[#EBEBEB] hover:bg-gray-200 transition font-medium tracking-tighter flex items-center gap-2 text-sm cursor-pointer">
           <span className="relative overflow-hidden h-5 flex items-center">
             <span className="block transition-transform duration-300 group-hover:-translate-y-full">
               Our work
@@ -42,6 +44,7 @@ export default function Approach() {
 
           <FiPlus className="transition-transform duration-300 group-hover:rotate-90" />
         </button>
+        </Link>
       </div>
     </section>
   );

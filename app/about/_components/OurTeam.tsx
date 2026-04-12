@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FiPlus } from "react-icons/fi";
 
 const team = [
@@ -66,7 +67,8 @@ export default function OurTeam() {
         </div>
 
         {/* Join us button */}
-        <button className="group w-fit px-5 py-2.5 rounded-full bg-[#EBEBEB] hover:bg-gray-200 transition font-medium tracking-tighter flex items-center gap-2 text-sm cursor-pointer">
+       <Link href="/contact">
+         <button className="group w-fit px-5 py-2.5 rounded-full bg-[#EBEBEB] hover:bg-gray-200 transition font-medium tracking-tighter flex items-center gap-2 text-sm cursor-pointer">
           <span className="relative overflow-hidden h-5 flex items-center">
             <span className="block transition-transform duration-300 group-hover:-translate-y-full">
               Join us
@@ -78,6 +80,7 @@ export default function OurTeam() {
 
           <FiPlus className="transition-transform duration-300 group-hover:rotate-90" />
         </button>
+       </Link>
       </div>
 
       {/* Team grid */}

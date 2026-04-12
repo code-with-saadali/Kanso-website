@@ -1,7 +1,6 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
-
 
 const faqs = [
   {
@@ -50,24 +49,18 @@ export default function FaqSection() {
 
   return (
     <section className="py-16">
-      
-
       {/* MAIN GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         {/* LEFT SIDE */}
         <div className="mb-8 lg:mb-0">
           <h2 className="text-3xl md:text-4xl lg:text-[50px] font-medium tracking-tight mb-4 md:mb-6">
-            Wondering How We Work?
+            FAQs
           </h2>
 
-          <p className="text-gray-600 tracking-tight font-medium max-w-md mb-6 md:mb-8 text-sm md:text-base">
-            Answers to common questions about <br /> our process, services, and how we
+          <p className="text-gray-600 tracking-tight font-medium max-w-xs mb-6 md:mb-8 text-sm md:text-base">
+            Answers to common questions about our process, services, and how we
             work.
           </p>
-
-          <button className="flex items-center gap-2 bg-[#e5e5e5] px-4 md:px-5 py-1 md:py-1.5 rounded-full text-sm md:text-base hover:bg-[#dcdcdc] transition">
-            Contact us <span className="text-lg md:text-xl">+</span>
-          </button>
         </div>
 
         {/* RIGHT SIDE */}

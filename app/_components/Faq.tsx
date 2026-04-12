@@ -1,7 +1,7 @@
-'use client';
+"use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
-
 
 const faqs = [
   {
@@ -66,13 +66,14 @@ export default function Faq() {
           </h2>
 
           <p className="text-gray-600 tracking-tight font-medium max-w-md mb-6 md:mb-8 text-sm md:text-base">
-            Answers to common questions about <br /> our process, services, and how we
-            work.
+            Answers to common questions about <br /> our process, services, and
+            how we work.
           </p>
-
-          <button className="flex items-center gap-2 bg-[#e5e5e5] px-4 md:px-5 py-1 md:py-1.5 rounded-full text-sm md:text-base hover:bg-[#dcdcdc] transition">
-            Contact us <span className="text-lg md:text-xl">+</span>
-          </button>
+          <Link href="/contact">
+            <button className="flex items-center cursor-pointer gap-2 bg-[#e5e5e5] px-4 md:px-5 py-1 md:py-1.5 rounded-full text-sm md:text-base hover:bg-[#dcdcdc] transition">
+              Contact us <span className="text-lg md:text-xl">+</span>
+            </button>
+          </Link>
         </div>
 
         {/* RIGHT SIDE */}

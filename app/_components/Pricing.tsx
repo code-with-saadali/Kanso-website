@@ -1,6 +1,7 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Pricing() {
   const [active, setActive] = useState("monthly");
@@ -34,7 +35,8 @@ export default function Pricing() {
             Pricing Plans.
           </h1>
           <p className="text-[#767676] tracking-tighter font-medium">
-            A curated selection of projects that reflect our <br /> commitment to simplicity and purposeful design.
+            A curated selection of projects that reflect our <br /> commitment
+            to simplicity and purposeful design.
           </p>
         </div>
 
@@ -147,10 +149,11 @@ export default function Pricing() {
                 {active === "monthly" ? "48 hours" : "3–4 weeks"}
               </p>
             </div>
-
-            <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:scale-105 transition">
-              {active === "monthly" ? "Get started +" : "Get in touch +"}
-            </button>
+            <Link href="/contact">
+              <button className="bg-white cursor-pointer text-black px-6 py-2 rounded-full text-sm font-medium hover:scale-105 transition">
+                {active === "monthly" ? "Get started +" : "Get in touch +"}
+              </button>
+            </Link>
           </div>
         </motion.div>
       </motion.div>
