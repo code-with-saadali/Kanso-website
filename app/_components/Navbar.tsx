@@ -210,7 +210,7 @@ export default function Navbar() {
             </div>
 
             {/* Bottom row */}
-            <div className="md:flex justify-between items-center pt-6 md:pt-10 pb-1 px-5">
+            <div className="md:flex justify-between items-center pt-6 md:pt-10 pb-5 px-5">
               <div className="space-y-0.5">
                 <div className="relative overflow-hidden h-6.5 flex items-center group w-fit">
                   <span className="block text-sm md:text-lg font-semibold text-black transition-transform duration-300 group-hover:-translate-y-full">
