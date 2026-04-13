@@ -42,7 +42,7 @@ export default function Content() {
   return (
     <div className="bg-[#121212] text-white h-full w-full px-3 md:px-10 min-[1920px]:max-w-7xl mx-auto py-12 flex flex-col justify-between">
       {/* TOP LOGO */}
-      <h1 className="text-[14.4vw] font-semibold tracking-tighter pt-12 md:pt-18">
+      <h1 className="text-[14.4vw] min-[1920px]:text-[9vw] font-semibold tracking-tighter pt-12 md:pt-18">
         Kanso® Studio
       </h1>
 

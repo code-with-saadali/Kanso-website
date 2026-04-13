@@ -47,7 +47,7 @@ export default function About() {
       <div className="flex flex-col md:flex-row justify-between items-center gap-10">
 
         {/* HUGE TITLE */}
-        <h1 className="text-[18vw] md:text-[12vw] font-semibold tracking-tighter leading-[0.9]">
+        <h1 className="text-[10vw] min-[1920px]:text-[7vw] font-semibold tracking-tighter leading-[0.9]">
           About us.
         </h1>
 
